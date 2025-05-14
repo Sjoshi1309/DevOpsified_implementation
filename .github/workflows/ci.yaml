@@ -30,27 +30,16 @@ jobs:
       run: go test ./...
 
   code-quality:
-  runs-on: ubuntu-latest
+    runs-on: ubuntu-latest
 
-  steps:
+    steps:
     - name: Checkout repository
       uses: actions/checkout@v4
-
-    - name: Set up Go
-      uses: actions/setup-go@v4
-      with:
-        go-version: '1.22.2'  # Set a stable Go version
-
-    - name: Install dependencies
-      run: go mod tidy
 
     - name: Run golangci-lint
       uses: golangci/golangci-lint-action@v6
       with:
-        version: v1.56.2
-        only-new-issues: true
-        working-directory: ./  # adjust if code is in a subdir
-
+        version: v1.51.0    
 
   push:
     runs-on: ubuntu-latest
