@@ -1,8 +1,8 @@
-# Full Stack DevOps Implementation on AWS EKS: Go App + CI/CD with GitHub Actions & Argo CD
+# 🚀 Full Stack DevOps Implementation on AWS EKS: Go App + CI/CD with GitHub Actions & Argo CD
 
 This project demonstrates a complete DevOps lifecycle implementation for a Golang web application — from source code to deployment on AWS EKS using industry-standard tools like Docker, GitHub Actions, Argo CD, and Helm.
 
-##  Key Features
+## 📌 Key Features
 
 - Multi-stage Docker build for lean and secure images
 - Kubernetes manifests for deployment configuration
@@ -13,7 +13,7 @@ This project demonstrates a complete DevOps lifecycle implementation for a Golan
 - Ingress controller setup for external access
 - DNS mapping for custom domain routing
 
-##  Tools & Technologies Used
+## ⚙️ Tools & Technologies Used
 
 | Category             | Tools & Services                         |
 |----------------------|-------------------------------------------|
@@ -28,7 +28,7 @@ This project demonstrates a complete DevOps lifecycle implementation for a Golan
 | Domain Routing       | DNS (e.g., Route 53 or external provider) |
 
 
-##  CI/CD Workflow
+## 🔄 CI/CD Workflow
 
 1. **CI with GitHub Actions**
    - Triggered on every push or pull request to the `main` branch
@@ -39,7 +39,8 @@ This project demonstrates a complete DevOps lifecycle implementation for a Golan
    - Watches GitHub repo for changes to Helm charts or Kubernetes manifests
    - Syncs updated config to AWS EKS
    - Handles deployment rollout, rollback, and health monitoring via GitOps
-##  Project Structure
+     
+## 📁 Project Structure
 
 ```bash
 .
@@ -57,7 +58,7 @@ This project demonstrates a complete DevOps lifecycle implementation for a Golan
 │       ├── templates/
 │       └── values.yaml
 ```
-##  Deployment Instructions
+## 🚀 Deployment Instructions
 ### 1. Set Up the Go Web Application
 - Wrote a simple web application in Golang
 - Verified the app locally using using go 'http://localhost:8080/courses'
@@ -91,8 +92,6 @@ Wrote Kubernetes YAML files for:
 - Installed and configured the AWS CLI with IAM credentials
 - Used eksctl to provision an EKS cluster in `us-east-1` region
   
- ![Live Screenshot](eksctl_cluster.png)
-
 ### 6. Helm Chart Packaging
 
 - Converted raw manifests into a **Helm chart**
@@ -110,8 +109,8 @@ Wrote Kubernetes YAML files for:
   ```
   http://3.15.157.242:32213/courses
   ```
- ![Live Screenshot](DNS.png) 
-  
+ ![Live Screenshot](DNS.png)   
+ 
 ### 8. CI with GitHub Actions
 Set up a workflow in `.github/workflows/ci.yaml` to:
 - Checkout code
@@ -125,7 +124,7 @@ Set up a workflow in `.github/workflows/ci.yaml` to:
 - Created an Argo CD application pointing to the GitHub repo
 - Argo CD automatically synced updated Helm charts and deployed the app to EKS
   
-## Final Testing
+## 🔍 Final Testing
 Verified the deployment via Argo CD UI and kubectl
 
 Validated logs, service accessibility, and Ingress routing
@@ -143,9 +142,9 @@ Pushed the change to GitHub, and the rest of the process was handled entirely by
 
 - The updated application was live on the website within seconds — fully automated through the DevOps setup
   
-![Live Screenshot](argo_cd.png)
+![Live Screenshot](CD.png)
 
-##  Issues Faced & How I Solved Them
+## 🔧 Issues Faced & How I Solved Them
 
 - **kubectl authentication issues**: Faced credential-related errors while connecting to the EKS cluster due to misconfigured AWS CLI and IAM roles. Resolved it by switching to an IAM user, regenerating access keys, and reconfiguring the AWS CLI.
 
@@ -155,12 +154,12 @@ Pushed the change to GitHub, and the rest of the process was handled entirely by
 
 _Each challenge reinforced my understanding of cross-platform deployment, CI/CD debugging, and toolchain alignment in real-world DevOps environments._
 
-##  Outcome
+## ✅ Outcome
 Every code push triggers linting, Docker build, and image push via GitHub Actions
  
 Argo CD auto-syncs changes and deploys to EKS
 
 Application is available via public IP or custom domain with Ingress
 
-_🚀 This project is more than just pipelines and deployments — it represents my journey of learning, debugging, and building real-world DevOps skills from the ground up by truly understanding every step of the DevOps journey._
+_This project is more than just pipelines and deployments — it represents my journey of learning, debugging, and building real-world DevOps skills from the ground up by truly understanding every step of the DevOps journey. 🙌_
 
