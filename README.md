@@ -90,7 +90,8 @@ Wrote Kubernetes YAML files for:
 ### 5. Installed kubectl, eksctl, and AWS CLI
 - Installed and configured the AWS CLI with IAM credentials
 - Used eksctl to provision an EKS cluster in `us-east-1` region
-imgg
+  
+ ![Live Screenshot](eksctl_cluster.png)
 
 ### 6. Helm Chart Packaging
 
@@ -109,7 +110,7 @@ imgg
   ```
   http://3.15.157.242:32213/courses
   ```
-  imgg
+ ![Live Screenshot](DNS.png) 
   
 ### 8. CI with GitHub Actions
 Set up a workflow in `.github/workflows/ci.yaml` to:
@@ -123,8 +124,7 @@ Set up a workflow in `.github/workflows/ci.yaml` to:
 - Exposed Argo CD using `NodePort` (with `--insecure` flag for development)
 - Created an Argo CD application pointing to the GitHub repo
 - Argo CD automatically synced updated Helm charts and deployed the app to EKS
-imgg
-
+  
 ## Final Testing
 Verified the deployment via Argo CD UI and kubectl
 
@@ -142,6 +142,8 @@ Pushed the change to GitHub, and the rest of the process was handled entirely by
 - Argo CD detected the change and automatically synced the new version to the EKS cluster
 
 - The updated application was live on the website within seconds — fully automated through the DevOps setup
+  
+![Live Screenshot](argo_cd.png)
 
 ##  Issues Faced & How I Solved Them
 
